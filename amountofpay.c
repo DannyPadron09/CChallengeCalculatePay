@@ -22,6 +22,31 @@ int main ()
     scanf("%d", &hours);
 
     // calculate the pay
+    if (hours <= 40)
+        pay = hours * PAYRATE;
+    else 
+    {
+        pay = 40 * PAYRATE;
+        double overTime = (hours - 40) * (PAYRATE * 1.5);
+        pay += overTime;
+    }
 
+    // calculate taxes
+    if (pay <= 300)
+    {
+        taxes = pay * TAXRATE_300;
+    }
+    else if(pay > 300 && pay <= 450)
+    {
+        taxes = 300 * TAXRATE_300;
+        taxes += (pay - 300) * TAXRATE_150;
+    }
+    else if(pay > 450)
+    {
+        taxes = 300 * TAXRATE_300;
+        taxes += 150 * TAXRATE_150;
+        taxes += (pay - 450) * TAXRATE_REST;
+    }
+    
 
 }
