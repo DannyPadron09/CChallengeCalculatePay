@@ -47,6 +47,15 @@ int main ()
         taxes += 150 * TAXRATE_150;
         taxes += (pay - 450) * TAXRATE_REST;
     }
-    
 
+    // calculate netPay
+    netPay = pay - taxes;
+
+
+    // displays outputs
+    printf("Your pay for the week is: %.2f\n", pay);
+    printf("Your taxes for the week are: %.2f\n", taxes);
+    printf("Your net pay for the week is: %.2f\n", netPay);
+
+    return 0;
 }
